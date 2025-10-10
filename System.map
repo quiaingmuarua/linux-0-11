@@ -738,24 +738,24 @@ LOAD lib/lib.a
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x0000000000000000       0x2b
+.comment        0x0000000000000000       0x2d
  *(.comment)
- .comment       0x0000000000000000       0x2b init/main.o
-                                         0x2c (size before relaxing)
- .comment       0x000000000000002b      0x23c kernel/kernel.o
- .comment       0x000000000000002b       0x2c mm/mm.o
- .comment       0x000000000000002b      0x344 fs/fs.o
- .comment       0x000000000000002b       0x2c lib/lib.a(ctype.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(_exit.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(open.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(close.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(errno.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(write.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(dup.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(setsid.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(execve.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(wait.o)
- .comment       0x000000000000002b       0x2c lib/lib.a(string.o)
+ .comment       0x0000000000000000       0x2d init/main.o
+                                         0x2e (size before relaxing)
+ .comment       0x000000000000002d      0x256 kernel/kernel.o
+ .comment       0x000000000000002d       0x2e mm/mm.o
+ .comment       0x000000000000002d      0x36a fs/fs.o
+ .comment       0x000000000000002d       0x2e lib/lib.a(ctype.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(_exit.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(open.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(close.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(errno.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(write.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(dup.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(setsid.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(execve.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(wait.o)
+ .comment       0x000000000000002d       0x2e lib/lib.a(string.o)
 
 .gnu.build.attributes
  *(.gnu.build.attributes .gnu.build.attributes.*)

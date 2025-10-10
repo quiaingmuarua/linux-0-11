@@ -70,10 +70,21 @@ boot/boot:	boot/boot.s tools/system
 	$(LD86) -s -o boot/boot boot/boot.o
 	
 run:
-	qemu-system-i386 -drive format=raw,file=Image,index=0,if=floppy -boot a -hdb hd_oldlinux.img -m 8 -machine pc-i440fx-2.5
+	qemu-system-i386 -drive format=raw,file=Image,index=0,if=floppy -boot a -drive format=raw,file=hd_oldlinux.img,index=1,if=ide -m 8 -machine pc-i440fx-2.5
 
 run-curses:
-	qemu-system-i386 -display curses -drive format=raw,file=Image,index=0,if=floppy -boot a -hdb hd_oldlinux.img -m 8 -machine pc-i440fx-2.5
+	qemu-system-i386 -display curses -drive format=raw,file=Image,index=0,if=floppy -boot a -drive format=raw,file=hd_oldlinux.img,index=1,if=ide -m 8 -machine pc-i440fx-2.5
+
+debug:
+	qemu-system-i386 -drive format=raw,file=Image,index=0,if=floppy -boot a -drive format=raw,file=hd_oldlinux.img,index=1,if=ide -m 8 -machine pc-i440fx-2.5 -s -S
+
+debug-curses:
+	qemu-system-i386 -display curses -drive format=raw,file=Image,index=0,if=floppy -boot a -drive format=raw,file=hd_oldlinux.img,index=1,if=ide -m 8 -machine pc-i440fx-2.5 -s -S
+
+gdb:
+	@echo "启动GDB调试会话..."
+	@echo "请确保已经在另一个终端运行了 'make debug'"
+	gdb
 	
 dump:
 	objdump -D --disassembler-options=intel tools/system > System.dum
