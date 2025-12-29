@@ -197,4 +197,12 @@ make debug
 
 ---
 
+
+# 先清理，避免旧对象文件导致 compile_commands 不全
+make clean
+
+# 生成 compile_commands.json
+bear -- make -j$(nproc)
+
+
 现在你应该可以在CLion中顺利调试Linux 0.01了！🚀
